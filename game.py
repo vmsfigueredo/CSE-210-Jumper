@@ -18,7 +18,7 @@ class Validation:
 class Player:
     def __init__(self):
         #   Define the Player
-        self.player = """
+        self._player = """
     _______
    /       \\
     -------
@@ -31,7 +31,7 @@ class Player:
     #   Draw the player according to its lives
     def draw(self, lives):
         #   Draw the parachute
-        parachute = self.player.split('\n')[1:6]
+        parachute = self._player.split('\n')[1:6]
         parachute = parachute[5-lives:]
         print("\n".join(parachute))
         #   Draw the player
@@ -45,13 +45,13 @@ class Guess:
         self.difficulty  = difficulty
         #   Words to guess
         #   E = Easy, M = Medium, H = Hard
-        self.words = {
+        self._words = {
             "E": ["Cup", "Life", "Love", "Ride", "Gold", "Wall", "Luck", "More", "Sure", "Pies"],
             "M": ["Piano", "Closet", "Closed", "Weird", "Lucky", "Short", "Control", "Boring"],
             "H": ["Expect", "Although", "Behold", "Scissors", "Enormity", "Eternity", "Literally", "Nitrogen"]
             }
         #   Get a random word according to difficulty
-        self.word = random.choice(self.words[difficulty.upper()]).upper()
+        self.word = random.choice(self._words[difficulty.upper()]).upper()
         #   Define tries and correct guesses
         self.tries = []
         self.correct = []
