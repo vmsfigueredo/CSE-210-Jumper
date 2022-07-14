@@ -35,7 +35,7 @@ class Player:
         parachute = parachute[5-lives:]
         print("\n".join(parachute))
         #   Draw the player
-        player = "\n".join(self.player.split('\n')[6:])
+        player = "\n".join(self._player.split('\n')[6:])
         if lives == 0:
             player = player.replace("o", "x")
         print(player)
